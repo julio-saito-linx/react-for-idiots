@@ -14,7 +14,14 @@ var MyList = React.createClass({
     newLine: function (lineItem) {
         var allTds = [];
         lineItem.forEach(function(tdData) {
-            allTds.push(<td>{tdData}</td>);
+            // define class
+            var tdClassName = '';
+            if (tdData !== ' ') {
+                tdClassName = 'hasData';
+            }
+            // add 'td'
+            allTds.push(<td className={tdClassName}>{tdData}</td>);
+
         });
 
         return  <tr>

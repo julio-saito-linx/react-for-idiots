@@ -2,7 +2,7 @@ body {
 	margin: 20px;
 }
 
-.myList td{
+.myList td {
 	width: 20px;
 	text-align: center;
 	height: 32px;
@@ -12,4 +12,8 @@ body {
 	border-style: dashed;
 	border-color: #A6DDAF;
 	border-width: 1px;
+}
+
+.hasData {
+	background-color: #F0FFEC;
 }
