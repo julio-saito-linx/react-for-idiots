@@ -6,19 +6,19 @@ var MyList = React.createClass({
         var all = [];
         for (var i = 0; i < this.props.data.length; i++) {
             var item  = this.props.data[i];
-            all.push(this.newLine(item[0], item[1]));
+            all.push(this.newLine(item));
         }
         return all;
     },
 
-    newLine: function (name, value) {
+    newLine: function (lineItem) {
+        var allTds = [];
+        lineItem.forEach(function(tdData) {
+            allTds.push(<td>{tdData}</td>);
+        });
+
         return  <tr>
-                    <td>
-                        {name}
-                    </td>
-                    <td>
-                        {value}
-                    </td>
+                    {allTds}
                 </tr>;
     },
 

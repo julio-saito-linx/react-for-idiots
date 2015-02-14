@@ -3,8 +3,13 @@ body {
 }
 
 .myList td{
-	padding: 10px;
-	border-style: solid;
-	border-color: #555;
+	width: 24px;
+	text-align: center;
+	height: 38px;
+	font-size: 20px;
+	font-family: cursive;
+	font-weight: normal;
+	border-style: dashed;
+	border-color: #A6DDAF;
 	border-width: 1px;
 }
