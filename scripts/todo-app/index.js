@@ -4,7 +4,7 @@ var Fluxxor = require('fluxxor');
 var actions = require('./actions');
 var React = require('react');
 var TodoStore = require('./stores/todo-store');
-var TodoReactApp = require('./todo-react-app');
+var TodoReactApp = require('./views/todo-react-app');
 
 var stores = {
   TodoStore: new TodoStore()
