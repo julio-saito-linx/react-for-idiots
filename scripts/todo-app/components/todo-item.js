@@ -1,3 +1,8 @@
+
+// The TodoItem component will display and style itself based on the completion
+// of the todo, and will dispatch an action indicating its intent to toggle its
+// completion state.
+
 var React = require('react');
 
 var Fluxxor = require('fluxxor');

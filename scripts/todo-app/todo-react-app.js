@@ -1,3 +1,15 @@
+
+// React Application
+
+// Let's build out our UI with React.
+
+// Our top-level Application component will use the FluxMixin as well as the
+// StoreWatchMixin to make our lives a bit easier. The component will iterate
+// over the array of todos and emit a TodoItem component for each one.
+
+// We'll also add a quick form for adding new todo items, and a button for
+// clearing completed todos.
+
 var React = require('react');
 var Fluxxor = require('fluxxor');
 

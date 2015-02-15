@@ -18,6 +18,13 @@ flux.on("dispatch", function(type, payload) {
   }
 });
 
+
+// Bringing it Together
+
+// Now that we have a Flux instance and all our components are defined, we can
+// finally render our app. We'll put it inside a div in our HTML with an ID of
+// "app".
+
 module.exports = function() {
 	React.render(<TodoReactApp flux={flux} />, document.body);
 };
