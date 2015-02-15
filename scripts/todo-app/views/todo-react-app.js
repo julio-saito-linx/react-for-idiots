@@ -39,7 +39,8 @@ var TodoReactApp = React.createClass({
 
   render: function() {
     return (
-      <div>
+      <div className="container">
+        <h2>Todo List</h2>
         <ul>
           {this.state.todos.map(function(todo, i) {
             return <li key={i}><TodoItem todo={todo} /></li>;

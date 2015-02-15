@@ -36,7 +36,7 @@ var TodoStore = Fluxxor.createStore({
     this.todos = [];
 
     this.bindActions(
-      constants.ADD_TODO, this.onAddTodo,
+      constants.ADD_TODO   , this.onAddTodo,
       constants.TOGGLE_TODO, this.onToggleTodo,
       constants.CLEAR_TODOS, this.onClearTodos
     );

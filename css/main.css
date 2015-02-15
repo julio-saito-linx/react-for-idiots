@@ -17,3 +17,12 @@ body {
 .hasData {
 	background-color: #F0FFEC;
 }
+
+span {
+	line-height: 30px;
+	border-color: rgb(231, 181, 181);
+	border-style: dotted;
+	border-width: 1px;
+	padding: 4px;
+	cursor: pointer;
+}
