@@ -1,18 +1,23 @@
-// 'use strict';
+'use strict';
 
-// var React = require('react'),
-//     Fluxxor = require("path/to/fluxxor");
+var Fluxxor = require('fluxxor');
+var actions = require('./actions');
+var React = require('react');
+var TodoStore = require('./stores/todo-store');
+var TodoReactApp = require('./todo-react-app');
 
-// // component
-// var MainContainer = require("components/main-container");
+var stores = {
+  TodoStore: new TodoStore()
+};
 
-// // data
-// var dateNow = (new Date()).toString();
-// var listData = [
-//     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', '.', '_', '_', ' ', ' ', '_', '_', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ],
-//     [' ', ' ', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', '_', ' ', ' ', '|', '_', '_', '|', '/', ' ', ' ', '|', '_', ' ', ' ', '_', '_', '_', '_', ' ', ' ' ],
-//     [' ', '/', ' ', ' ', '_', '_', '_', '/', '\\', '_', '_', ' ', ' ', '\\', ' ', '|', ' ', ' ', '\\', ' ', ' ', ' ', '_', '_', '\\', '/', ' ', ' ', '_', ' ', '\\', ' ' ],
-//     [' ', '\\', '_', '_', '_', ' ', '\\', ' ', ' ', '/', ' ', '_', '_', ' ', '\\', '|', ' ', ' ', '|', '|', ' ', ' ', '|', ' ', '(', ' ', ' ', '<', '_', '>', ' ', ')' ],
-//     ['/', '_', '_', '_', '_', ' ', ' ', '>', '(', '_', '_', '_', '_', ' ', ' ', '/', '_', '_', '|', '|', '_', '_', '|', ' ', ' ', '\\', '_', '_', '_', '_', '/', ' ' ],
-//     [' ', ' ', ' ', ' ', ' ', '\\', '/', ' ', ' ', ' ', ' ', ' ', ' ', '\\', '/', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' ]
-// ];
+var flux = new Fluxxor.Flux(stores, actions);
+
+flux.on("dispatch", function(type, payload) {
+  if (console && console.log) {
+    console.log("[Dispatch]", type, payload);
+  }
+});
+
+module.exports = function() {
+	React.render(<TodoReactApp flux={flux} />, document.body);
+};
