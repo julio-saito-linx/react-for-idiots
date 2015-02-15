@@ -1,5 +1,18 @@
-var constants = require('./constants');
+// One More Thing: What The Hell Is An "Action Creator"?
+// Remember, when we click our button, we dispatch a specific event:
 
+// AppDispatcher.dispatch({
+//     eventName: 'new-item',
+//     newItem: { name: 'Samantha' }
+// });
+
+// Well, this can get pretty repetitious to type if many of your views need to
+// trigger this event. Plus, all of your views need to know the specific
+// object format. That's lame. Flux suggests an abstraction, called action
+// creators, which just abstracts the above into a function.
+
+
+var constants = require('./constants');
 var actions = {
   addTodo: function(text) {
     this.dispatch(constants.ADD_TODO, {text: text});

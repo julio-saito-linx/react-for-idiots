@@ -56,6 +56,14 @@ var TodoReactApp = React.createClass({
     );
   },
 
+  // 4. Your View Responds to the "Change" Event
+
+  // Now we need to display the list. Our view will completely re-render when
+  // the list changes. That's not a typo.
+
+  // First, let's listen for the change event from our ListStore when the
+  // component "mounts," which is when the component is first created
+
   handleTodoTextChange: function(e) {
     this.setState({newTodoText: e.target.value});
   },

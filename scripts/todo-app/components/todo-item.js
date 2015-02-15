@@ -23,6 +23,10 @@ var TodoItem = React.createClass({
     return <span style={style} onClick={this.onClick}>{this.props.todo.text}</span>;
   },
 
+  // 1. Your Views "Dispatch" "Actions"
+
+  // A "dispatcher" is essentially an event system. It broadcasts events and
+  // registers callbacks.
   onClick: function() {
     this.getFlux().actions.toggleTodo(this.props.todo);
   }
