@@ -30,9 +30,12 @@ var MyList = React.createClass({
     },
 
     render: function() {
-        return  <table className='myList'>
-                    {this.allLines()}
-                </table>;
+        return  <div>
+                    <h3>ASCII table</h3>
+                    <table className='myList'>
+                        {this.allLines()}
+                    </table>
+                </div>;
   }
 });
 
