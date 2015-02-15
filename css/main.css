@@ -18,11 +18,25 @@ body {
 	background-color: #F0FFEC;
 }
 
-span {
+.checkbox {
 	line-height: 30px;
 	border-color: rgb(231, 181, 181);
 	border-style: dotted;
 	border-width: 1px;
 	padding: 4px;
 	cursor: pointer;
+}
+
+li {
+	list-style-type: none;
+}
+
+.checkbox input[type="checkbox"]{
+	cursor: pointer;
+	margin-top: 9px;
+	margin-left: -15px;
+}
+
+span {
+    margin-left: 6px;
 }

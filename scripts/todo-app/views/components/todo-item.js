@@ -20,16 +20,31 @@ var TodoItem = React.createClass({
       textDecoration: this.props.todo.complete ? "line-through" : ""
     };
 
-    return <span style={style} onClick={this.onClick}>{this.props.todo.text}</span>;
+    return  <div>
+              <div className="checkbox">
+                <label>
+
+                  <input  type     = "checkbox"
+                          checked  = {this.props.todo.complete}
+                          onChange = {this.checkBoxToggle}/>
+
+                  <span style={style}>
+                    {this.props.todo.text}
+                  </span>
+
+                </label>
+              </div>
+            </div>;
   },
 
   // 1. Your Views "Dispatch" "Actions"
 
   // A "dispatcher" is essentially an event system. It broadcasts events and
   // registers callbacks.
-  onClick: function() {
+  checkBoxToggle: function() {
     this.getFlux().actions.toggleTodo(this.props.todo);
-  }
+  },
+
 });
 
 module.exports = TodoItem;
