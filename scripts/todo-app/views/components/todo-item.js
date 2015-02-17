@@ -20,8 +20,11 @@ var TodoItem = React.createClass({
       textDecoration: this.props.todo.complete ? "line-through" : ""
     };
 
-    return  <div>
-              <div className="checkbox">
+    return  <div id            = "todoItemContainer"
+                 onClick       = {this.selectItem}
+                 onDoubleClick = {this.enableEditOnItem}>
+
+              <div className={this.getTodoItemClassName()}>
                 <label>
 
                   <input  type     = "checkbox"
@@ -43,6 +46,21 @@ var TodoItem = React.createClass({
   // registers callbacks.
   checkBoxToggle: function() {
     this.getFlux().actions.toggleTodo(this.props.todo);
+  },
+
+  selectItem: function(e) {
+    this.getFlux().actions.selectTodo(this.props.todo);
+  },
+
+  enableEditOnItem: function(e) {
+    this.getFlux().actions.enableEditTodo(this.props.todo);
+  },
+
+  getTodoItemClassName: function() {
+    if (this.props.todo.selected) {
+      return "checkbox todoItemSelected";
+    }
+    return "checkbox";
   },
 
 });

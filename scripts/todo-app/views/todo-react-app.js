@@ -42,11 +42,11 @@ var TodoReactApp = React.createClass({
       <div className="container">
 
         <div className="row">
-          <div className="col-md-8 col-md-offset-2">
+          <div className="col-xs-8 col-xs-offset-2">
 
             <h2>Todo List</h2>
             <div className="row">
-              <ul className="col-md-12">
+              <ul className="col-xs-12">
                 {this.state.todos.map(function(todo, i) {
                   return <li key={i}><TodoItem todo={todo} /></li>;
                 })}
@@ -56,20 +56,28 @@ var TodoReactApp = React.createClass({
               <form onSubmit={this.onSubmitForm}>
 
                 <div className="row">
-                  <div className="col-md-9">
-                    <input type="text" size="30" placeholder="New Todo" className="form-control"
-                           value={this.state.newTodoText}
-                           onChange={this.handleTodoTextChange} />
+                  <div className="col-xs-9">
+                    <input  type        = "text"
+                            size        = "30"
+                            placeholder = "New Todo"
+                            className   = "form-control"
+                            value       = {this.state.newTodoText}
+                            onChange    = {this.handleTodoTextChange} />
                   </div>
-                  <div className="col-md-2">
-                    <input type="submit" className="btn btn-default" value="Add Todo" />
+                  <div className="col-xs-3">
+                    <input  type      = "submit"
+                            id        = "addTodoSubmit"
+                            className = "btn btn-default"
+                            value     = "Add Todo" />
                   </div>
                 </div>
 
               </form>
             </div>
             <div className="row">
-              <button id="clearCompletedTodos" className="btn btn-default" onClick={this.clearCompletedTodos}>Clear Completed</button>
+              <button id        = "clearCompletedTodos"
+                      className = "btn btn-default"
+                      onClick   = {this.clearCompletedTodos}> Clear Completed </button>
             </div>
 
           </div>

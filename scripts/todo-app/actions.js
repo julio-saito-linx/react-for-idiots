@@ -22,6 +22,14 @@ var actions = {
     this.dispatch(constants.TOGGLE_TODO, {todo: todo});
   },
 
+  selectTodo: function(todo) {
+    this.dispatch(constants.SELECT_TODO, {todo: todo});
+  },
+
+  enableEditTodo: function(todo) {
+    this.dispatch(constants.ENABLE_EDIT_TODO, {todo: todo});
+  },
+
   clearTodos: function() {
     this.dispatch(constants.CLEAR_TODOS);
   }

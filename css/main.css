@@ -25,6 +25,13 @@ body {
 	border-width: 1px;
 	padding: 4px;
 	cursor: pointer;
+
+	/*unselectable*/
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
 
 li {
@@ -57,10 +64,17 @@ input[type="submit"] {
     padding: 0 15px;
 }
 
- {}
-
- {}
-
 button#clearCompletedTodos {
     margin: 0 14px;
 }
+
+.col-md-3 {}
+
+input#addTodoSubmit {
+    width: 91%;
+}
+
+.todoItemSelected {
+	background-color: #E9FCEB;
+}
+

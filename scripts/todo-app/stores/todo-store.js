@@ -36,9 +36,11 @@ var TodoStore = Fluxxor.createStore({
     this.todos = [];
 
     this.bindActions(
-      constants.ADD_TODO   , this.onAddTodo,
-      constants.TOGGLE_TODO, this.onToggleTodo,
-      constants.CLEAR_TODOS, this.onClearTodos
+      constants.ADD_TODO        , this.onAddTodo,
+      constants.TOGGLE_TODO     , this.onToggleTodo,
+      constants.CLEAR_TODOS     , this.onClearTodos,
+      constants.SELECT_TODO     , this.onSelectTodo,
+      constants.ENABLE_EDIT_TODO, this.onEnableEditTodo
     );
   },
 
@@ -62,6 +64,23 @@ var TodoStore = Fluxxor.createStore({
 
   onToggleTodo: function(payload) {
     payload.todo.complete = !payload.todo.complete;
+    this.emit("change");
+  },
+
+  onSelectTodo: function(payload) {
+    this.todos.map(function(todoItem) {
+      todoItem.selected = false;
+    });
+    payload.todo.selected = true;
+    this.emit("change");
+  },
+
+  onEnableEditTodo: function(payload) {
+    this.todos.map(function(todoItem) {
+      todoItem.editEnabled = false;
+    });
+    payload.todo.editEnabled = true;
+
     this.emit("change");
   },
 
