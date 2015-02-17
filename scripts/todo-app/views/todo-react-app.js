@@ -40,19 +40,41 @@ var TodoReactApp = React.createClass({
   render: function() {
     return (
       <div className="container">
-        <h2>Todo List</h2>
-        <ul>
-          {this.state.todos.map(function(todo, i) {
-            return <li key={i}><TodoItem todo={todo} /></li>;
-          })}
-        </ul>
-        <form onSubmit={this.onSubmitForm}>
-          <input type="text" size="30" placeholder="New Todo"
-                 value={this.state.newTodoText}
-                 onChange={this.handleTodoTextChange} />
-          <input type="submit" value="Add Todo" />
-        </form>
-        <button onClick={this.clearCompletedTodos}>Clear Completed</button>
+
+        <div className="row">
+          <div className="col-md-8 col-md-offset-2">
+
+            <h2>Todo List</h2>
+            <div className="row">
+              <ul className="col-md-12">
+                {this.state.todos.map(function(todo, i) {
+                  return <li key={i}><TodoItem todo={todo} /></li>;
+                })}
+              </ul>
+            </div>
+            <div className="row">
+              <form onSubmit={this.onSubmitForm}>
+
+                <div className="row">
+                  <div className="col-md-9">
+                    <input type="text" size="30" placeholder="New Todo" className="form-control"
+                           value={this.state.newTodoText}
+                           onChange={this.handleTodoTextChange} />
+                  </div>
+                  <div className="col-md-2">
+                    <input type="submit" className="btn btn-default" value="Add Todo" />
+                  </div>
+                </div>
+
+              </form>
+            </div>
+            <div className="row">
+              <button id="clearCompletedTodos" className="btn btn-default" onClick={this.clearCompletedTodos}>Clear Completed</button>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     );
   },

@@ -40,3 +40,27 @@ li {
 span {
     margin-left: 6px;
 }
+
+form {
+	margin: -10px 0px 11px 15px;
+}
+
+input[type="text"] {
+    height: 38px;
+}
+
+input[type="submit"] {
+    height: 38px;
+}
+
+.col-md-10 {
+    padding: 0 15px;
+}
+
+ {}
+
+ {}
+
+button#clearCompletedTodos {
+    margin: 0 14px;
+}
